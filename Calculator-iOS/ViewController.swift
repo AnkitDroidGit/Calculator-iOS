@@ -21,5 +21,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func btnPressed(_ sender: Any) {
+    }
 }
 
