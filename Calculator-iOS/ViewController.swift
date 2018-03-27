@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        resultLbl.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,11 +33,11 @@ class ViewController: UIViewController {
 
     @IBAction func btnPressed(_ sender: Any) {
         if canClear {
-            resultLabel.text = ""
+            resultLbl.text = ""
             canClear = false
         }
-        let currentText = resultLabel.text!
-        let textLabel = sender.titleLabel?.text
+        let currentText = resultLbl.text!
+        let textLabel = (sender as AnyObject).titleLabel??.text
         if let text = textLabel {
             switch text {
             case "+", "*", "/", "-":
@@ -46,14 +47,14 @@ class ViewController: UIViewController {
                 op = text
                 isFirstNumber = false
                 hasOp = true
-                resultLabel.text = "\(currentText) \(op) "
+                resultLbl.text = "\(currentText) \(op) "
                 break
             case "=":
                 isFirstNumber = true
                 hasOp = false
                 canClear = true
                 let result = calculate()
-                resultLabel.text = "\(result)"
+                resultLbl.text = "\(result)"
                 break
             default:
                 if isFirstNumber {
@@ -61,7 +62,7 @@ class ViewController: UIViewController {
                 } else {
                     secondNumberText = "\(secondNumberText)\(text)"
                 }
-                resultLabel.text = "\(currentText)\(text)"
+                resultLbl.text = "\(currentText)\(text)"
                 break;
             }
         }
