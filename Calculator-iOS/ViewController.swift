@@ -67,7 +67,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
     func calculate() -> Double {
         let firstNumber = Double(firstNumberText)!
         let secondNumber = Double(secondNumberText)!
