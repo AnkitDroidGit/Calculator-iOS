@@ -31,6 +31,11 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func grayBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func orangeBtnPressed(_ sender: Any) {
+    }
     @IBAction func btnPressed(_ sender: Any) {
         if canClear {
             resultLbl.text = ""
